@@ -1,0 +1,16 @@
+.content{
+    max-width: 500px;
+    margin:5% 35%;
+    background-color: #fff;
+    padding: 3% 3%;
+  }
+
+  button {
+    background-color: #24a0ed;
+    color: white;
+  }
+  
+  button:hover {
+    color: #fff;
+    background-color: #1a6da0;
+  }

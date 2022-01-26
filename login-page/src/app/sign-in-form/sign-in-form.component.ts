@@ -1,6 +1,7 @@
+import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
 
 @Component({
   selector: 'app-sign-in-form',
@@ -9,11 +10,15 @@ import { Router } from '@angular/router'
 })
 export class SignInFormComponent implements OnInit {
 
+  signinForm: any; //form
+
+
   constructor(
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
-  signinForm: any; //form
+  
 
   ngOnInit(): void {
     this.signinForm = new FormGroup({
@@ -36,9 +41,9 @@ export class SignInFormComponent implements OnInit {
 
     if(this.signinForm.value) 
     {
-      //this.router.navigate(['./home.component.html'])
-     alert(` Thank You for Signing In`)
-     this.signinForm.reset(); //reset form value
+      this.router.navigate(['/']);   //home.component.html)
+    
+    // this.signinForm.reset(); //reset form value
     }
   }
 

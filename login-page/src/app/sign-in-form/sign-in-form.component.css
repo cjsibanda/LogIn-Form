@@ -1,20 +1,20 @@
 .content{
-    max-width: 500px;
-    margin:auto;
-    background-color: #fff;
-    padding: 2% 2%;
+  max-width: 500px;
+  margin:auto;
+  background-color: #fff;
+  padding: 2% 2%;
 }
 
 button {
-    background-color: #24a0ed;
-    color: white;
+  background-color: #24a0ed;
+  color: white;
 }
 
 button:hover {
-    color: #fff;
-    background-color: #1a6da0;
+  color: #fff;
+  background-color: #1a6da0;
 }
 
 .error{
-    color: red;
+  color: red;
 }

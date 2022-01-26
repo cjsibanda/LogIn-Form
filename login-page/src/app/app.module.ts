@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInFormComponent } from './sign-in-form/sign-in-form.component';
@@ -14,16 +14,18 @@ import { HomeComponent } from './home/home.component';
   declarations: [
     AppComponent,
     SignInFormComponent,
-    HomeComponent
+    HomeComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
+      {path: '', component: HomeComponent},
       {path: './sign-in-form.component.html', component: SignInFormComponent},
-      {path: './home.component.html', component: HomeComponent},
       {path: '**', component: SignInFormComponent}
     ])
 
