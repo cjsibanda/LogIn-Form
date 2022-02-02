@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+import { Order, OrderService } from '../services/order.service';
+
 
 @Component({
   selector: 'app-home',
@@ -8,13 +10,19 @@ import { Router } from '@angular/router'
 })
 export class HomeComponent implements OnInit {
 
+  
+
   constructor(
-    private router: Router
+    private router: Router,
+    private orderService: OrderService
+
   ) { }
 
   home: any; //Home page
 
   ngOnInit(): void {
+    let order = this.orderService.getOrders();
+    console.log(order);
   }
 
   logOut() {

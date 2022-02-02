@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { SignInFormComponent } from './sign-in-form/sign-in-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { OrderService } from './services/order.service';
 
 
 
@@ -30,7 +31,9 @@ import { HomeComponent } from './home/home.component';
     ])
 
   ],
-  providers: [],
+  providers: [
+    OrderService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
