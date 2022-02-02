@@ -1,6 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Order, OrderService } from '../services/order.service';
+import { OrderService } from '../services/order.service';
 
 
 @Component({
@@ -9,21 +10,20 @@ import { Order, OrderService } from '../services/order.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+ orders:any;
   
 
   constructor(
     private router: Router,
     private orderService: OrderService
 
-  ) { }
-
-  home: any; //Home page
+  ) {}
 
   ngOnInit(): void {
-    let order = this.orderService.getOrders();
-    console.log(order);
+      this.orderService.getOrders().subscribe(response => {this.orders = response;});
+      console.log(this.orders);
   }
+
 
   logOut() {
     this.router.navigate(['./sign-in-form.component.html'])

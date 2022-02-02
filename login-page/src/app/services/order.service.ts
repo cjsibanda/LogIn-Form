@@ -1,25 +1,31 @@
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { getSafePropertyAccessString } from '@angular/compiler';
 
 
-export interface Order {
-  userId: number;
-  id: number;
-  title:'string';
-  body:'string';
+//export interface Order {
+ // userId: number;
+ // id: number;
+ // title:'string';
+ // body:'string';
+//}
 
-}
+@Injectable({
+  providedIn: 'root'
+})
 
-@Injectable()
 export class OrderService {
+  private url = 'https://jsonplaceholder.typicode.com/posts';
 
-  constructor(private http: HttpClient) {
-    
+
+constructor (private httpClient: HttpClient) {}
+
+getOrders() {
+  return this.httpClient.get(this.url);
   }
 
-  getOrders(): Observable <Order> { 
-    return this.http.get<Order>('https://jsonplaceholder.typicode.com/posts/1').pipe((response) => response);
-       
-  }
 }
+
+ 
