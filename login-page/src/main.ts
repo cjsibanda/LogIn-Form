@@ -9,6 +9,5 @@ if (environment.production) {
 }
 
 //Test error
-//Test error
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
