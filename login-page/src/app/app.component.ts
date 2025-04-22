@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+  //App Component
 export class AppComponent {
   //login page
   title = 'login-page';
