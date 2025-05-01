@@ -26,6 +26,7 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('login-page');
   });
 
+  //Should render title
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
