@@ -8,6 +8,6 @@ if (environment.production) {
   enableProdMode();
 }
 
-//Test Error
+//Test
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
